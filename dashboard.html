@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+
+    </style>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/table.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div class="">
+        <table id="devices">
+            <thead>
+                <th>Devices</th>
+                <th>MAC Address</th>
+                <th>IP</th>
+                <th>Created Date</th>
+                <th>Power Consumption (kWh)</th>
+            </thead>
+            <tr>
+                <th>TV</th>
+                <th>00:1B:44:11:3B:8A</th>
+                <th>119.12.15.12</th>
+                <th>21-06-2021</th>
+                <th>250</th>
+            </tr>
+            <tr>
+                <th>Washer</th>
+                <th>00:1B:44:11:3B:52</th>
+                <th>119.12.15.120</th>
+                <th>22-06-2021</th>
+                <th>50</th>
+            </tr>
+            <tfoot>
+                <tr>
+                    <td>Total</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>$180</td>
+                </tr>
+            </tfoot>
+        </table>
+        <div>
+            <div class="chart"></div>
+            <div class="login-form">
+                <form action="#" id="device-form">
+                    <input type="text" class="form-device" id="name" placeholder="name" required="required">
+                    <input type="text" class="form-device" id="ip" placeholder="IP" required="required">
+                    <div style="text-align: center;">
+                        <button type="button" class="login-button" id="add">ADD DEVICE</button>
+                    </div>
+                </form>
+                <span class="danger"></span>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        $(document).ready(function () {
+
+            function validateIP() {
+
+            }
+        });
+    </script>
+</body>
+
+</html>

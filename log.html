@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+
+    </style>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/table.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div class="search-div">
+        <h3>
+            Action Logs
+        </h3>
+        <div class="search">
+            <input type="text" class="form-control" id="search" placeholder="Search">
+            <button type="button" class="login-button" id="login">Search</button>
+        </div>
+    </div>
+    <div class="card">
+        <table id="devices">
+            <thead>
+                <th>Device ID #</th>
+                <th>Name</th>
+                <th>Action</th>
+                <th>Date</th>
+            </thead>
+            <tr>
+                <th>101</th>
+                <th>TV</th>
+                <th>Turn On</th>
+                <th>21-06-2021</th>
+            </tr>
+            <tr>
+                <th>102</th>
+                <th>Washer</th>
+                <th>Turn Off</th>
+                <th>22-06-2021</th>
+            </tr>
+            <tfoot>
+                <tr>
+                    <td>Total</td>
+                    <td></td>
+                    <td></td>
+                    <td>$180</td>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="pagination">
+            <a href="#">&laquo;</a>
+            <a href="#">1</a>
+            <a href="#" class="active">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">&raquo;</a>
+          </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+
+            function searchDevice() {
+
+            }
+        });
+    </script>
+</body>
+
+</html>
