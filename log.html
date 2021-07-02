@@ -5,81 +5,435 @@
     <style>
 
     </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/table.css" />
-    <link rel="stylesheet" href="css/menu.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/log.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+    <script type="text/javascript"
+        src="https://cdn.rawgit.com/botmonster/jquery-bootpag/master/lib/jquery.bootpag.min.js"></script>
 </head>
 
 <body>
-<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
-<div class="wrapper">
-    <div class="sidebar">
-        <h2>Sidebar</h2>
-        <ul>
-            <li><a href="#"><i class="fas fa-home"></i>Dashboard</a></li>
-            <li><a href="#"><i class="fas fa-history"></i>Logs</a></li>
-            <li><a href="#"><i class="fas fa-cog"></i>Setting</a></li>
-        </ul>
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <div class="wrapper">
+        <div class="sidebar">
+            <div class="bg_shadow"></div>
+            <div class="sidebar__inner">
+                <div class="close">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="profile_info info">
+                    <div class="profile_img">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="profile_data">
+                        <p class="name">Welcome John</p>
+                    </div>
+                </div>
+                <div class="profile_info device">
+                    <div class="profile_data">
+                        <p class="name"><i class="fas fa-laptop-house"></i>&nbsp;Device Manager</p>
+                    </div>
+                </div>
+                <ul class="siderbar_menu">
+                    <li><a href="dashboard.html"><i class="fas fa-home"></i>&nbsp;Dashboard</a></li>
+                    <li><a class="active" href="log.html"><i class="fas fa-history"></i>&nbsp;Logs</a></li>
+                    <li><a href="login.html"><i class="fas fa-cog"></i>&nbsp;Setting</a></li>
+                </ul>
 
-    </div>
-</div>
-    <div class="search-div">
-        <h3>
-            Action Logs
-        </h3>
-        <div class="search">
-            <input type="text" class="form-control" id="search" placeholder="Search">
-            <button type="button" class="login-button" id="login">Search</button>
+            </div>
+        </div>
+        <div class="main_container">
+            <div class="top_navbar">
+                <div class="hamburger">
+                    <div class="hamburger__inner">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+                <ul class="menu">
+                </ul>
+                <ul class="right_bar">
+                    <li><i class="fas fa-user-circle"></i></li>
+                    <li>
+                        <p class="name">Welcome John</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="container">
+                <div class="search-div">
+                    <!-- <div class="row">
+                        <div class="col-3">
+                            <h3>
+                                Action Logs
+                            </h3>
+                        </div>
+                        <div class="col-9">
+                            <div class="search">
+                                <input type="text" class="form-control" id="search" placeholder="Search">
+                                <button type="button" class="login-button" id="searchButton">Search</button>
+                            </div>
+                        </div>
+                    </div> -->
+                    <h3>
+                        Action Logs
+                    </h3>
+
+                </div>
+                <div class="card-table">
+                    <!-- <div>Hiển thị </div> -->
+                    <div class="search">
+                        <div class="row">
+                            <div class="col-4 col-s-6">
+                                <input type="text" class="form-control" id="search" placeholder="Search">
+                            </div>
+                            <div class="col-4 col-s-6">
+                                <button type="button" class="login-button" id="searchButton">Search</button>
+                            </div>
+                            <div class="col-4 col-s-6">
+                                <label>Show
+                                    <span>
+                                        <select id="rows">
+                                            <option value="-1">All</option>
+                                            <option value="5">5</option>
+                                            <option value="10">10</option>
+                                            <option value="20">20</option>
+                                            <option value="50">50</option>
+                                            <option value="100">100</option>
+                                        </select>
+                                    </span> rows
+                                </label>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <table id="logs">
+                        <thead>
+                            <th>Device ID #</th>
+                            <th>Name</th>
+                            <th>Action</th>
+                            <th>Date</th>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td>Total</td>
+                                <td></td>
+                                <td></td>
+                                <td id="count">0</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <!-- <div id="nav" class="pagination"> -->
+                    <div id="nav" class="pagination">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="card">
-        <table id="devices">
-            <thead>
-                <th>Device ID #</th>
-                <th>Name</th>
-                <th>Action</th>
-                <th>Date</th>
-            </thead>
-            <tr>
-                <th>101</th>
-                <th>TV</th>
-                <th>Turn On</th>
-                <th>21-06-2021</th>
-            </tr>
-            <tr>
-                <th>102</th>
-                <th>Washer</th>
-                <th>Turn Off</th>
-                <th>22-06-2021</th>
-            </tr>
-            <tfoot>
-                <tr>
-                    <td>Total</td>
-                    <td></td>
-                    <td></td>
-                    <td>$180</td>
-                </tr>
-            </tfoot>
-        </table>
-        <div class="pagination">
-            <a href="#">&laquo;</a>
-            <a href="#">1</a>
-            <a href="#" class="active">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <a href="#">5</a>
-            <a href="#">6</a>
-            <a href="#">&raquo;</a>
-          </div>
-    </div>
+    <script src="js/menu.js"></script>
     <script>
         $(document).ready(function () {
-
-            function searchDevice() {
-
+            var dataLog = [
+                {
+                    "device_id": "109",
+                    "name": "TV",
+                    "action": "turn on",
+                    "date": "22-06-2021"
+                },
+                {
+                    "device_id": "110",
+                    "name": "Laptop",
+                    "action": "turn on",
+                    "date": "21-06-2021"
+                },
+                {
+                    "device_id": "111",
+                    "name": "TV",
+                    "action": "turn on",
+                    "date": "24-06-2021"
+                },
+                {
+                    "device_id": "112",
+                    "name": "Wahser",
+                    "action": "turn off",
+                    "date": "21-06-2021"
+                },
+                {
+                    "device_id": "113",
+                    "name": "Wahser",
+                    "action": "turn off",
+                    "date": "23-06-2021"
+                },
+                {
+                    "device_id": "114",
+                    "name": "Mobile",
+                    "action": "turn off",
+                    "date": "21-06-2021"
+                },
+                {
+                    "device_id": "115",
+                    "name": "TV",
+                    "action": "turn off",
+                    "date": "21-06-2021"
+                },
+                {
+                    "device_id": "116",
+                    "name": "Light",
+                    "action": "turn off",
+                    "date": "22-06-2021"
+                },
+                {
+                    "device_id": "1",
+                    "name": "TV",
+                    "action": "turn on",
+                    "date": "21-06-2021"
+                },
+                {
+                    "device_id": "110",
+                    "name": "Laptop",
+                    "action": "turn on",
+                    "date": "21-06-2021"
+                },
+                {
+                    "device_id": "111",
+                    "name": "TV",
+                    "action": "turn on",
+                    "date": "24-06-2021"
+                },
+                {
+                    "device_id": "112",
+                    "name": "Wahser",
+                    "action": "turn off",
+                    "date": "21-06-2021"
+                },
+                {
+                    "device_id": "113",
+                    "name": "Wahser",
+                    "action": "turn off",
+                    "date": "23-06-2021"
+                },
+                {
+                    "device_id": "114",
+                    "name": "Mobile",
+                    "action": "turn off",
+                    "date": "21-06-2021"
+                },
+                {
+                    "device_id": "115",
+                    "name": "TV",
+                    "action": "turn off",
+                    "date": "21-06-2021"
+                },
+                {
+                    "device_id": "116",
+                    "name": "Light",
+                    "action": "turn off",
+                    "date": "22-06-2021"
+                },
+                {
+                    "device_id": "1",
+                    "name": "TV",
+                    "action": "turn on",
+                    "date": "21-06-2021"
+                },
+                {
+                    "device_id": "110",
+                    "name": "Laptop",
+                    "action": "turn on",
+                    "date": "21-06-2021"
+                },
+                {
+                    "device_id": "111",
+                    "name": "TV",
+                    "action": "turn on",
+                    "date": "24-06-2021"
+                },
+                {
+                    "device_id": "112",
+                    "name": "Wahser",
+                    "action": "turn off",
+                    "date": "21-06-2021"
+                },
+                {
+                    "device_id": "113",
+                    "name": "Wahser",
+                    "action": "turn off",
+                    "date": "23-06-2021"
+                },
+                {
+                    "device_id": "114",
+                    "name": "Mobile",
+                    "action": "turn off",
+                    "date": "21-06-2021"
+                },
+                {
+                    "device_id": "115",
+                    "name": "TV",
+                    "action": "turn off",
+                    "date": "21-06-2021"
+                },
+                {
+                    "device_id": "116",
+                    "name": "Light",
+                    "action": "turn off",
+                    "date": "22-06-2021"
+                }
+            ];
+            var listLogs;
+            // displayLogTable()
+            initLogTable();
+            paginationPage();
+            totalCount();
+            getDataLogs()
+            function getDataLogs() {
+                $.get('/home/bss/Downloads/bsssupport/duong-hx/data/log.json', function (data) {
+                    // Do your stuff
+                    console.log(data);
+                });
             }
+
+
+            // paginationPageBootpag()
+            function displayLogTable() {
+                $("#logs > tbody tr").remove();
+                listLogs.forEach(element => {
+                    $("#logs > tbody").append("<tr><td>" + element.device_id + "</td><td>" + element.name + "</td><td>" + element.action + "</td><td>" + element.date + "</td></tr>");
+                });
+            }
+            function initLogTable() {
+                listLogs = dataLog;
+                displayLogTable();
+            };
+            function paginationPage() {
+                // $('#logs').after('<div id="nav" class="pagination"></div>');
+                var rowsShown = 4;
+                var rowsTotal = $('#logs tbody tr:visible').length;
+                var numPages = rowsTotal / rowsShown;
+                for (i = 0; i < numPages; i++) {
+                    var pageNum = i + 1;
+                    $('#nav').append('<a href="#" rel="' + i + '">' + pageNum + '</a> ');
+                }
+                $('#logs tbody tr').hide();
+                $('#logs tbody tr').slice(0, rowsShown).show();
+                $('#nav a:first').addClass('active');
+                $('#nav a').bind('click', function () {
+
+                    $('#nav a').removeClass('active');
+                    $(this).addClass('active');
+                    var currPage = $(this).attr('rel');
+                    var startItem = currPage * rowsShown;
+                    var endItem = startItem + rowsShown;
+                    $('#logs tbody tr').css('opacity', '0.0').hide().slice(startItem, endItem).
+                        css('display', 'table-row').animate({ opacity: 1 }, 300);
+                });
+            }
+
+            function updatePaginationPage() {
+                // $('#logs').after('<div id="nav" class="pagination"></div>');
+                var rowsShown = 4;
+                var rowsTotal = $('#logs tbody tr:visible').length;
+                var numPages = rowsTotal / rowsShown;
+                for (i = 0; i < numPages; i++) {
+                    var pageNum = i + 1;
+                    $('#nav').append('<a href="#" rel="' + i + '">' + pageNum + '</a> ');
+                }
+                // $('#logs tbody tr:visible').hide();
+                $('#logs tbody tr:visible').slice(0, rowsShown).show();
+                $('#nav a:first').addClass('active');
+                $('#nav a').bind('click', function () {
+
+                    $('#nav a').removeClass('active');
+                    $(this).addClass('active');
+                    var currPage = $(this).attr('rel');
+                    var startItem = currPage * rowsShown;
+                    var endItem = startItem + rowsShown;
+                    $('#logs tbody tr').css('opacity', '0.0').hide().slice(startItem, endItem).
+                        css('display', 'table-row').animate({ opacity: 1 }, 300);
+                });
+            }
+            function cancelPagination() {
+                $("#nav a").remove();
+            }
+
+            var total = 0;
+            function paginationPageBootpag() {
+                var row = $('#rows').val();
+                var rowsShown = 4;
+                var rowsTotal = $('#logs tbody tr:visible').length;
+                var numPages = rowsTotal / rowsShown;
+                $('#nav').bootpag({
+                    total: numPages,
+                    page: 1,
+                    maxVisible: 4,
+                    leaps: true,
+                    // href: "#result-page-{{number}}",
+                })
+
+                    //page click action
+                    .on("page", function (event, num) {
+                        //show / hide content or pull via ajax etc
+                        // $("#content").html("Page " + num);
+                    });
+            }
+            $('#searchButton').click(function () {
+                // // searchLogs();
+                // // searchLog();
+                // listLogs = findInValues(dataLog, $('#search').val());
+                // displayLogTable();
+                // cancelPagination();
+                // paginationPage();
+                // // // paginationPage();
+                // // updatePaginationPage();
+                // totalCount();
+                searchDeviceLog()
+            })
+            function searchDeviceLog(){
+                listLogs = findInValues(dataLog, $('#search').val());
+                displayLogTable();
+                cancelPagination();
+                paginationPage();
+                totalCount();
+            }
+            $('#search').on('keypress', function (e) {
+                if (e.which == 13) {
+                    searchDeviceLog();
+                }
+            });
+            function searchLogs() {
+                var value = $('#search').val().toLowerCase();
+                $("#logs tbody tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            }
+            function findInValues(arr, value) {
+                value = String(value).toLowerCase();
+                return arr.filter(o =>
+                    Object.entries(o).some(entry =>
+                        String(entry[1]).toLowerCase().includes(value)
+                    )
+                );
+            }
+
+            function searchLog() {
+                var searchInput = $('#search').val().toLowerCase();
+                dataLog.forEach(element => {
+
+                });
+                listLogs = dataLog.find(function (data, index) {
+                    if (data.name.toLowerCase() === searchInput || data.action.toLowerCase() === searchInput || data.device_id.toLowerCase() === searchInput || data.date.toLowerCase() === searchInput)
+                        return true;
+                });
+            }
+            function totalCount() {
+                total = $("#logs tbody tr").length;
+                $('#count').html(total);
+            }
+
         });
     </script>
 </body>

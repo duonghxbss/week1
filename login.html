@@ -5,17 +5,19 @@
     <style>
 
     </style>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/login.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.0/jquery.validate.min.js"></script>
 </head>
 
 <body>
     <div class="login-form">
         <h2 class="title">SOIOT SYSTEM </h2>
-        <form action="dashboard.html" id="login-form">
-            <input type="text" class="form-control" id="username" placeholder="Username" required="required">
-            <input type="text" class="form-control" id="password" placeholder="Password" required="required">
+        <form action="dashboard.html" id="login-form" >
+            <input type="text" class="form-control" id="username" name="username" placeholder="Username" required="required">
+            <input type="text" class="form-control" id="password" name="password" placeholder="Password" required="required">
             <div style="text-align: center;">
 
                 <button type="button" class="login-button" id="login">LOGIN</button>
@@ -24,21 +26,7 @@
         </form>
         <span class="danger"></span>
     </div>
-    <script>
-        $(document).ready(function () {
-            $("#login").click(function (event) {
-                var username = $("#username").val();
-                var password = $("#password").val();
-                if (username === "john" && password === "1234") {
-                    $("#login-form").submit();
-                    return;
-                }
-
-                $("span").text("Username or password incorrect!").show().fadeOut(4000);
-                event.preventDefault();
-            });
-        });
-    </script>
+    <script src="js/login.js"></script>
 </body>
 
 </html>
